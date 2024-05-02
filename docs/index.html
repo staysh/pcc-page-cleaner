@@ -9,21 +9,27 @@
   <body>
 <script>
   tinymce.init({
-    selector: 'textarea',
-    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount export linkchecker a11ychecker tinymcespellchecker advtable advcode tableofcontents autocorrect markdown powerpaste',
+    selector: '#doc2d2l',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount export linkchecker a11ychecker tinymcespellchecker advtable advcode tableofcontents autocorrect powerpaste',
     toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-    tinycomments_mode: 'embedded',
-    tinycomments_author: 'Author name',
-    mergetags_list: [
-      { value: 'First.Name', title: 'First Name' },
-      { value: 'Email', title: 'Email' },
-    ],
-    ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+  });
+  tinymce.init({
+    selector: '#mdown',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount export linkchecker a11ychecker tinymcespellchecker advtable advcode tableofcontents autocorrect markdown',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
   });
 </script>
-<textarea>
-  Welcome to TinyMCE!
+<h1>Copy + Paste Demos</h1>
+<p> On this page are two WYSIWYG text editors with presets for pasting in full documents that can be either cleaned or converted for pasting in to D2L Brightspacea.</p>
+<h2>Google Docs (and .docx) to D2L Brightspace</h2>
+<p>Paste in a Google Doc or Word .docx file to clean formatting and prepare for pasting into D2L Brightspace.</p>
+<textarea id="doc2d2l" rows="10" cols="60">
+  Paste in a Google Doc or .docx here
 </textarea>
-
+<h2>Markdown Block Converter</h2>
+<p>Paste a Markdown file here as plain text (CTRL + SHIFT + V) to convert for pasting into D2L Brightspace.</p>
+<textarea id="mdown" rows="10" cols="60">
+  Paste in a markdown file here
+</textarea>
   </body>
 </html>
